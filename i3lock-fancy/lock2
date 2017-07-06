@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# ICON=$HOME/usr/img/onepun.png
+# ICON=$HOME/usr/img/sana.png
+# ICON=$HOME/usr/img/sana3.png
+ICON=$HOME/usr/img/pusheencat.png
+# ICON=$HOME/usr/img/pika2.png
+# ICON=$HOME/usr/img/pokemon.png
+# ICON=$HOME/usr/img/duck.png
+TMPBG=/tmp/screen.png
+scrot /tmp/screen.png
+convert $TMPBG -blur 0x5 $TMPBG
+convert $TMPBG $ICON -gravity center -composite -matte $TMPBG
+i3lock -u -i $TMPBG
